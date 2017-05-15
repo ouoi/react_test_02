@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Rdux Test</title>
+</head>
+<body>
+	<h1>Refresh 없이 url만 바뀜 <span></span></h1>
+	<h2>현재 페이지 링크</h2>
+	<ul id="menu-nav">
+		<li><a href="/page-1/" title="Page 1">Page 1</a></li>
+		<li><a href="/page-2/" title="Page 2">Page 2</a></li>
+		<li><a href="/page-3/" title="Page 3">Page 3</a></li>
+	</ul>
+
+	<br>
+
+	<div id="root"></div>
+	<script src="bundle.js"></script>
+
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+	<script type="text/javascript">
+		$('#menu-nav a').click(function (e) {
+			e.preventDefault();
+			var targetUrl = $(this).attr('href');
+			var targetTitle = $(this).attr('title');
+
+			window.history.pushState({url: '' + targetUrl + ''}, targetTitle, targetUrl);
+		});
+	</script>
+</body>
+</html>

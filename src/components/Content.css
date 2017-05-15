@@ -1,0 +1,7 @@
+.contentWrap {
+	font-size: 20px;
+	border: 2px solid #ddd;
+}
+.contentWrap .item {
+	color: blue;
+}
